@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+body{background-color:pink;}
+.zzk_darkBG{background-color:black; }
+</style>
+<script src="jquery_lib.js"></script>
+<script>
+
+
+$(document).ready(function() {
+
+$(".zzk_dark_mode").click(function() { 
+	$("body").addClass("zzk_darkBG");
+	localStorage.setItem('mytime', 'zzk_darkBG');		 
+});
+
+$(".zzk_light_mode").click(function() { 
+	localStorage.removeItem("mytime");
+	 $("body").removeClass("zzk_darkBG");
+});
+
+
+if(localStorage.getItem('mytime') == 'zzk_darkBG') {
+	$("body").addClass("zzk_darkBG");
+	}
+ 
+
+});
+</script>
+</head>
+<body> 
+  
+<button type="button" class="zzk_dark_mode">Dark</button><br>
+<button type="button" class="zzk_light_mode">Light</button><br>
+       
+  
+</body>
+</html>
